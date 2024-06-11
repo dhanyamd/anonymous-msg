@@ -5,7 +5,7 @@ import { User } from "next-auth";
 import { AuthOptions } from "../auth/[...nextauth]/options";
 import mongoose from "mongoose";
 
-export async function GET(request: Request){
+export async function GET(){
     await dbConnect();
 
     const session = await getServerSession(AuthOptions) 
@@ -36,7 +36,11 @@ export async function GET(request: Request){
         messages : user[0].messages
      },{status : 200})
     }catch(error){
-
+        console.log("unexpected error", error)
+        return Response.json({
+            success: false,
+            message : "Unexpected error"
+        },{status: 500})
     }
  
 }
