@@ -70,13 +70,13 @@ export async function GET(request: Request){
     return Response.json({
         success: true,
         isAcceptingMessages : foundUser.isAcceptingMessages
-    },{status: 200})
+        },{status: 200})
  } catch(error){
     console.log("error while fetching messages")
         return Response.json({
             success: false,
             message: "error while fetching messages"
-        },{status: 500})
+                },{status: 500})
 }
 }
 

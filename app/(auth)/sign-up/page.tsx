@@ -106,7 +106,7 @@ export default function SignupPage() {
                   </FormControl>
                   {ischeckingUsername && <Loader2 className="animate-spin"></Loader2>}
                   <p className={`text-sm ${usernameMessage === "Username is unique" ? "text-green-500" : "text-red-500"}`}>
-                    test {usernameMessage}
+                     {usernameMessage}
                   </p>
                   <FormMessage />
                 </FormItem>
@@ -154,7 +154,9 @@ export default function SignupPage() {
         <div className="text-center mt-4">
           <p>
             Already a member ? {''}
-            <Link href='/sign-in' className="text-blue-600 hover:text-blue-800"/>
+            <Link href='/sign-in' className="text-blue-600 hover:text-blue-800">
+              Signin
+              </Link>
           </p>
         </div>
       </div >
