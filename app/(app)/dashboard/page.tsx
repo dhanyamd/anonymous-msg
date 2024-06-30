@@ -120,10 +120,6 @@ export const dashboard = () => {
         return <>Please login</>
     }
 
-    function handleDeleteMessage(messageId: string): void {
-        throw new Error("Function not implemented.")
-    }
-
     return (
         <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
           <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
@@ -174,7 +170,7 @@ export const dashboard = () => {
                 <MessageCard
                   key={message._id}
                   message={message}
-                  onMessageDelete={handleDeleteMessage}
+                  onMessageDelete={handleDeleteClick}
                 />
               ))
             ) : (
