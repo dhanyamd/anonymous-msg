@@ -33,7 +33,7 @@ export default function SignupPage() {
 
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
       const result =  await signIn('credentials',{
-        redirect : false,
+        redirect : true,
         identifier: data.identifier,
         password : data.password
        })  
