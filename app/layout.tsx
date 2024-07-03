@@ -3,12 +3,11 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import AuthProvider from './context/AuthProvider';
-import Navbar from '@/components/ui/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'anonymous',
+  title: 'True Feedback',
   description: 'Real feedback from real people.',
 };
 
@@ -21,7 +20,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" >
       <AuthProvider>
         <body className={inter.className}>
-            <Navbar/>
           {children}
           <Toaster />
         </body>
